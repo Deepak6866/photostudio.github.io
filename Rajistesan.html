@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!----------------------Contact---------------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>deepakrajpoot6866@gmail.com</p>
+                <p><i class="fa-solid fa-square-phone"></i>8808888568</p>
+                <p><i class="fa-solid fa-square-phone"></i>Jaitipur Nwabganj Unnao Uttar Pradesh</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100028757920661"><i class="fa-brands fa-square-facebook"></i></i></a>
+                    <a href=""><i class="fa-brands fa-square-twitter"></i></a>
+                    <a href="https://www.instagram.com/deepakrajpoot6866/"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="/img/PDF.pdf" download class="btn btn2">Download Cv</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="NAME" name="NAME" placeholder="Your Name" required>
+                    <input type="FATHERS NAME"name="FATHERS NAME" placeholder="Fathers Name" required>
+                    <input type="MOTHERS NAME" name="MOTHERS NAME" placeholder="Mothers Name" required>
+                    <input type="COURES NAME"name="COURES NAME" placeholder="Coures Nane" required> 
+                    <input type="MOBAIL. NO." name="MOBAIL. NO." placeholder="Your Mobail No" required>
+                    <input type="EMAIL. ID." name="EMAIL. ID." placeholder="Your Email" required>
+                    <textarea name="ADDRESS" rows="6" placeholder="Your Address"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------copyright----------------->
+<div class="copyright">
+    <p>Copyright @ Deepak Raj. <span><i class="fa-solid fa-heart"></i></span> Deepcolourphotography</p>
+</div>
+<!-------------------Contact---------------------->
+
+
+<!-------------------script-------------------------->
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbymGNM3jNlovfMi0766b-moIR_ZXQaFoW1bNx2YixoJmHrPS3ctoI-rWUxIt2mBzDQ68w/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
